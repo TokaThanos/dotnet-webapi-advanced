@@ -1,0 +1,19 @@
+# .gitignore for .NET 8 Web API
+
+# Ignore Visual Studio Code settings
+.vscode/
+.vs/
+
+# Ignore compiled binaries and object files
+bin/
+obj/
+Migrations/
+
+# Ignore generated files and folders
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.json
+*.log
+*.env
