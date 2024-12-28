@@ -1,16 +1,16 @@
 using System.ComponentModel.DataAnnotations;
-using WebApiProject.Models;
+using Core.Models;
 
-namespace WebApiProject.ModelValidations;
+namespace Core.ModelValidations;
 
-public class Ticket_EnsureDueDateInFuture : ValidationAttribute
+public class Ticket_EnsureDueDateAfterReportDateAttribute : ValidationAttribute
 {
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
     {
         var ticket = validationContext.ObjectInstance as Ticket;
-        if (ticket?.TicketId == null && ticket?.DueDate < DateTime.Now.Date)
+        if (!ticket.ValidateDueDateAfterReportDate())
         {
-            return new ValidationResult("Due date needs to be in future");
+            return new ValidationResult("Due date has to be later than the Report date");
         }
         return ValidationResult.Success;
     }

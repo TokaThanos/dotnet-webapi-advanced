@@ -1,6 +1,6 @@
+using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using WebApiProject.Filters;
-using WebApiProject.Models;
 
 namespace WebApiProject.Controllers;
 
@@ -22,14 +22,6 @@ public class TicketsController : ControllerBase
 
     [HttpPost]
     public IActionResult Post([FromBody] Ticket ticket)
-    {
-        return Ok(ticket);
-    }
-
-    [HttpPost]
-    [Route("/api/v2/Tickets")]
-    [Ticket_ValidateDateActionFilter]
-    public IActionResult PostV2([FromBody] Ticket ticket)
     {
         return Ok(ticket);
     }

@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace WebApiProject.Filters;
 
+/// <summary>
+/// This attribute is not used in the code but kept for reference and learning
+/// </summary>
 public class Version1DiscontinueResourceFilter : Attribute, IResourceFilter
 {
     public void OnResourceExecuted(ResourceExecutedContext context)
